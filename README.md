@@ -1,33 +1,34 @@
+
 # Integration and Verbalization of Novel Abilities in Language Models
 
-### Research Project | Natural Language Processing | Large Language Models
-
-## Overview
-
-This project investigates whether a small language model can learn symbolic transformation rules from examples and generalize to an unseen transformation parameter.
-
-The experiments use parameter-efficient fine-tuning (LoRA) on the Qwen2.5-0.5B-Instruct model.
+An independent experimental study investigating whether a small language model can learn symbolic transformation rules from examples and generalize to an unseen transformation parameter using LoRA fine-tuning.
 
 ## Research Question
 
-Can a language model learn a transformation rule from examples and correctly apply it to an unseen rule parameter?
+Can a language model learn a transformation rule from examples and generalize to an unseen rule parameter?
+
+## Overview
+
+This project explores the ability of a small language model to learn and generalize symbolic transformation rules.
+
+The model was trained on two transformation rules (+1 and +2) and evaluated on an unseen rule (+3) to examine whether it could generalize beyond the examples provided during training.
 
 ## Experimental Setup
 
-- **Base Model:** Qwen/Qwen2.5-0.5B-Instruct
-- **Fine-tuning Method:** Low-Rank Adaptation (LoRA)
-- **Framework:** Hugging Face Transformers and PEFT
-- **Hardware:** NVIDIA Tesla T4
-- **Dataset:** Custom symbolic transformation dataset
-- **Training Rules:** Cyclic shifts of +1 and +2
-- **Validation Rule:** Unseen cyclic shift of +3
+| Component | Details |
+|---|---|
+| Base Model | Qwen2.5-0.5B-Instruct |
+| Fine-tuning Method | LoRA |
+| Training Rules | +1 and +2 |
+| Validation Rule | +3 |
+| Hardware | NVIDIA Tesla T4 |
+| Dataset | Custom symbolic transformation dataset |
 
 ## Experiments
 
-Two experiments were conducted:
+**Experiment 1:** Used transformation instructions without explicitly defining the cyclic A-H sequence.
 
-1. **Experiment 1:** Tested symbolic transformation learning without explicitly defining the cyclic sequence.
-2. **Experiment 2:** Introduced an explicit cyclic sequence (A–H), including wraparound from H to A.
+**Experiment 2:** Added an explicit definition of the cyclic sequence, where the symbol after H returns to A.
 
 ## Results
 
@@ -37,28 +38,50 @@ Two experiments were conducted:
 | Validation Accuracy | 0% | 0% |
 | Average Training Loss | 6.76 | 3.53 |
 
-Both experiments achieved 0% validation accuracy on the unseen +3 transformation rule.
+## Results Visualizations
+
+### Training Loss Comparison
+
+![Training Loss Comparison](results/Training%20Loss%20Comparison.png)
+
+### Training vs Validation Accuracy
+
+![Training vs Validation Accuracy](results/Training%20vs%20Validation%20Accuracy.png)
 
 ## Key Observation
 
-The experiments did not demonstrate successful generalization to the unseen transformation parameter. The results highlight the challenges of learning and applying symbolic rules in a small language model under limited training conditions.
+Neither experiment achieved successful generalization to the unseen +3 transformation rule.
 
-## Limitations
-
-- Small training and validation datasets.
-- Only one base model was evaluated.
-- Experiments used a single random seed.
-- The task covered a limited set of symbolic transformations.
-- Generalization was tested on one unseen transformation parameter.
+Although Experiment 2 showed a lower average training loss, this did not translate into improved training accuracy or validation performance.
 
 ## Repository Contents
 
-The repository contains the research paper, experimental notebook, and result visualizations.
+| File | Description |
+|---|---|
+| [Research Notebook](LLM_Rule_Generalization_Experiments%281%29.ipynb) | Experiment implementation and analysis |
+| [Research Paper](Integration_and_verbalization_of_Novel_Abilities_in_Language_Models.pdf) | Full research manuscript |
+| [Training Loss Graph](results/Training%20Loss%20Comparison.png) | Training loss comparison |
+| [Accuracy Graph](results/Training%20vs%20Validation%20Accuracy.png) | Training and validation accuracy |
+| [Requirements](requirements.txt) | Python dependencies |
 
-## Research Paper
+## Limitations
 
-The complete research paper is available in the `paper/` directory.
+- Small dataset with only 16 training and 8 validation examples.
+- Only one base model was evaluated.
+- A single random seed was used.
+- The experiments tested one unseen transformation parameter.
+- Results are limited to the experimental setup and should not be generalized to all language models.
+
+## Technologies Used
+
+- Python
+- PyTorch
+- Hugging Face Transformers
+- PEFT (LoRA)
+- Pandas
+- Matplotlib
+- Google Colab
 
 ## Disclaimer
 
-This is an independent experimental research project. The findings are limited to the experimental setup described above.
+This is an independent experimental research project conducted for academic and research exploration.
