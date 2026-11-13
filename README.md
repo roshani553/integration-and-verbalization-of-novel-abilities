@@ -58,8 +58,8 @@ Although Experiment 2 showed a lower average training loss, this did not transla
 
 | File | Description |
 |---|---|
-| [Research Notebook](LLM_Rule_Generalization_Experiments%281%29.ipynb) | Experiment implementation and analysis |
-| [Research Paper](Integration_and_verbalization_of_Novel_Abilities_in_Language_Models.pdf) | Full research manuscript |
+| [Research Notebook]([Research Notebook](./LLM_Rule_Generalization_Experiments%20(1).ipynb) | Experiment implementation and analysis |
+| [Research Paper]([Research Paper](./Integration_and_Verbalization_of_Novel_Abilities_in_Language_Models.pdf) | Full research manuscript |
 | [Training Loss Graph](results/Training%20Loss%20Comparison.png) | Training loss comparison |
 | [Accuracy Graph](results/Training%20vs%20Validation%20Accuracy.png) | Training and validation accuracy |
 | [Requirements](requirements.txt) | Python dependencies |
