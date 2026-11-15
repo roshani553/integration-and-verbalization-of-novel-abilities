@@ -32,7 +32,7 @@ The experimental workflow consists of:
 
 6) Comparing training and validation accuracy across experiments.
 
-##Experimental Results
+## Experimental Results
 
 <img width="750" height="227" alt="image" src="https://github.com/user-attachments/assets/ea24fe87-68a3-4c2d-a303-a9e7fcd80eac" />
 
