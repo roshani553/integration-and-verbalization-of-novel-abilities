@@ -1,4 +1,4 @@
-##EXPLORING RULE LEARNING AND GENERALIZATION IN SMALL LANGUAGE MODELS
+## EXPLORING RULE LEARNING AND GENERALIZATION IN SMALL LANGUAGE MODELS
 
 Overview
 
@@ -16,36 +16,25 @@ Evaluate whether learned patterns can be applied to an unseen transformation.
 
 Examine the limitations of fine-tuning when generalising beyond training examples.
 
-Methodology
+## Methodology
 
 The experimental workflow consists of:
 
-Designing symbolic transformation tasks using numerical shifts.
+1) Designing symbolic transformation tasks using numerical shifts.
 
-Preparing training examples based on the +1 and +2 transformation rules.
+2) Preparing training examples based on the +1 and +2 transformation rules.
 
-Fine-tuning the base language model using LoRA.
+3) Fine-tuning the base language model using LoRA.
 
-Evaluating model performance on the training transformations.
+4) Evaluating model performance on the training transformations.
 
-Testing generalisation using the unseen +3 transformation rule.
+5) Testing generalisation using the unseen +3 transformation rule.
 
-Comparing training and validation accuracy across experiments.
+6) Comparing training and validation accuracy across experiments.
 
 ##Experimental Results
 
 <img width="750" height="227" alt="image" src="https://github.com/user-attachments/assets/ea24fe87-68a3-4c2d-a303-a9e7fcd80eac" />
-
-
-##Key Observations
-
-Both experiments achieved non-zero training accuracy.
-
-Neither experiment achieved correct predictions on the held-out validation transformation.
-
-The results indicate that learning the training patterns did not translate into successful generalisation to the unseen rule.
-
-
 
 ## Results
 
