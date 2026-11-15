@@ -72,21 +72,20 @@ Although Experiment 2 showed a lower average training loss, this did not transla
 
 ## Limitations
 
-- Small dataset with only 16 training and 8 validation examples.
-- Only one base model was evaluated.
-- A single random seed was used.
-- The experiments tested one unseen transformation parameter.
-- Results are limited to the experimental setup and should not be generalized to all language models.
+1) The experiments focus on a limited set of symbolic transformation rules.
 
-## Technologies Used
+2) Results are specific to the selected model, dataset and experimental configuration.
 
-- Python
-- PyTorch
-- Hugging Face Transformers
-- PEFT (LoRA)
-- Pandas
-- Matplotlib
-- Google Colab
+3) The validation results do not establish general reasoning ability.
+
+4) Further experiments across different rules, datasets and model configurations are needed.
+
+## Project Information
+
+Project Type: Independent Experimental Project
+Research Areas: Natural Language Processing, Small Language Models, Fine-tuning and Generalisation
+
+Author: Roshni Yadav
 
 ## Disclaimer
 
