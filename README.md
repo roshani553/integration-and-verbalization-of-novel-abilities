@@ -1,34 +1,74 @@
+##EXPLORING RULE LEARNING AND GENERALIZATION IN SMALL LANGUAGE MODELS
 
-# Integration and Verbalization of Novel Abilities in Language Models
+Overview
 
-An independent experimental study investigating whether a small language model can learn symbolic transformation rules from examples and generalize to an unseen transformation parameter using LoRA fine-tuning.
+This project investigates whether small language models can learn symbolic transformation rules through fine-tuning and apply those rules to transformations they have not encountered during training.
 
-## Research Question
+Using Qwen2.5-0.5B-Instruct and Low-Rank Adaptation (LoRA), the experiments explore the relationship between pattern learning, rule application and generalisation in small language models.
 
-Can a language model learn a transformation rule from examples and generalize to an unseen rule parameter?
+The primary focus is understanding whether a model learns an underlying transformation pattern or simply adapts to examples presented during training.
 
-## Overview
+Research Objectives
 
-This project explores the ability of a small language model to learn and generalize symbolic transformation rules.
+Investigate the ability of small language models to learn symbolic transformation rules.
 
-The model was trained on two transformation rules (+1 and +2) and evaluated on an unseen rule (+3) to examine whether it could generalize beyond the examples provided during training.
+Evaluate whether learned patterns can be applied to an unseen transformation.
 
-## Experimental Setup
+Examine the limitations of fine-tuning when generalising beyond training examples.
 
-| Component | Details |
-|---|---|
-| Base Model | Qwen2.5-0.5B-Instruct |
-| Fine-tuning Method | LoRA |
-| Training Rules | +1 and +2 |
-| Validation Rule | +3 |
-| Hardware | NVIDIA Tesla T4 |
-| Dataset | Custom symbolic transformation dataset |
+Methodology
 
-## Experiments
+The experimental workflow consists of:
 
-**Experiment 1:** Used transformation instructions without explicitly defining the cyclic A-H sequence.
+Designing symbolic transformation tasks using numerical shifts.
 
-**Experiment 2:** Added an explicit definition of the cyclic sequence, where the symbol after H returns to A.
+Preparing training examples based on the +1 and +2 transformation rules.
+
+Fine-tuning the base language model using LoRA.
+
+Evaluating model performance on the training transformations.
+
+Testing generalisation using the unseen +3 transformation rule.
+
+Comparing training and validation accuracy across experiments.
+
+Experimental Results
+
+Two fine-tuning experiments were conducted.
+
+Metric
+
+Experiment 1
+
+Experiment 2
+
+Training Accuracy
+
+50%
+
+31.25%
+
+Validation Accuracy
+
+0%
+
+0%
+
+Final Training Loss
+
+6.742947
+
+6.238836
+
+Key Observations
+
+Both experiments achieved non-zero training accuracy.
+
+Neither experiment achieved correct predictions on the held-out validation transformation.
+
+The results indicate that learning the training patterns did not translate into successful generalisation to the unseen rule.
+
+
 
 ## Results
 
