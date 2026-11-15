@@ -32,35 +32,12 @@ Testing generalisation using the unseen +3 transformation rule.
 
 Comparing training and validation accuracy across experiments.
 
-Experimental Results
+##Experimental Results
 
-Two fine-tuning experiments were conducted.
+<img width="750" height="227" alt="image" src="https://github.com/user-attachments/assets/ea24fe87-68a3-4c2d-a303-a9e7fcd80eac" />
 
-Metric
 
-Experiment 1
-
-Experiment 2
-
-Training Accuracy
-
-50%
-
-31.25%
-
-Validation Accuracy
-
-0%
-
-0%
-
-Final Training Loss
-
-6.742947
-
-6.238836
-
-Key Observations
+##Key Observations
 
 Both experiments achieved non-zero training accuracy.
 
